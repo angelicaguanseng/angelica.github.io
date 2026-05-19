@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holidae | Book Now</title>
+    <link rel="stylesheet" href="../Stylesheets/booking.css">
+</head>
+<body>
+
+    <header>
+
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <a href="../index.html" class="navlogo" aria-label="Holidae home">
+                <img src="../Assets/holidaelogo.png" class="navlogo-img" alt="Holidae logo">
+                Holidae
+            </a>
+
+            <ul class="navlinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="packages.html">All Packages</a></li>
+                <li><a href="booking.html" class="navcta">Book Now</a></li>
+            </ul>
+
+            <button class="navmobile" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+
+        <div class="navmobiledrawer" aria-hidden="true">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="packages.html">All Packages</a></li>
+                <li><a href="booking.html">Book Now</a></li>
+            </ul>
+        </div>
+
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <!-- Contains the primary booking page content -->
+    <main class="bookingpage">
+
+        <!-- PAGE CONTAINER -->
+        <!-- Wraps all booking content into one section -->
+        <div class="bookingpage-inner">
+
+            <!-- PAGE TITLE -->
+            <!-- Displays the booking page heading -->
+            <h1 class="bookingpage-title">Book Your Package</h1>
+
+            <!-- PAGE DESCRIPTION -->
+            <!-- Provides a short explanation for the booking process -->
+            <p class="bookingpage-sub">Secure your spot in a few simple steps.</p>
+
+            <!-- STEP INDICATOR -->
+            <!-- Displays the user's current booking progress -->
+            <div class="steps" role="list" aria-label="Booking steps">
+
+                <!-- ACTIVE STEP -->
+                <!-- Highlights the current booking stage -->
+                <div class="step active" role="listitem">
+                    <div class="step-dot" aria-current="step">1</div>
+                    <p class="step-label">Your details</p>
+                </div>
+                <div class="step" role="listitem">
+                    <div class="step-dot">2</div>
+                    <p class="step-label">Review</p>
+                </div>
+                <div class="step" role="listitem">
+                    <div class="step-dot">3</div>
+                    <p class="step-label">Confirmed</p>
+                </div>
+            </div>
+
+            <!-- BOOKING FORM LAYOUT -->
+            <!-- Organizes the booking form and order summary -->
+            <div class="bookingform">
+
+                <!-- FORM SECTION -->
+                <!-- Collects customer booking information -->
+                <div id="form-card">
+                    <form class="formcard" id="booking-form" novalidate>
+                        <h2>Your Details</h2>
+
+                        <!-- FORM ROW -->
+                        <!-- Groups multiple form fields into one row -->
+                        <div class="formrow">
+
+                            <!-- INPUT FIELD -->
+                            <!-- Collects the user's first name -->
+                            <div class="formgroup">
+
+                                <!-- FORM LABEL -->
+                                <!-- Describes the related input field -->
+                                <label for="fname">First Name *</label>
+
+                                <!-- TEXT INPUT -->
+                                <!-- Input field for entering text -->
+                                <input type="text" id="fname" name="fname" placeholder="e.g. Jane" autocomplete="given-name" required>
+                                <span class="errormsg" role="alert"></span>
+                            </div>
+                            <div class="formgroup">
+                                <label for="lname">Last Name *</label>
+                                <input type="text" id="lname" name="lname" placeholder="e.g. Doe" autocomplete="family-name" required>
+                                
+                                <!-- ERROR MESSAGE -->
+                                <!-- Displays validation errors using JavaScript -->
+                                <span class="errormsg" role="alert"></span>
+                            </div>
+                        </div>
+
+                        <!-- EMAIL INPUT -->
+                        <!-- Collects the user's email address -->
+                        <div class="formgroup">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                            <span class="errormsg" role="alert"></span>
+                        </div>
+
+                        <!-- PHONE INPUT -->
+                        <!-- Collects the user's phone number -->
+                        <div class="formgroup">
+                            <label for="phone">Phone Number (optional)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+971 50 000 0000" autocomplete="tel">
+                        </div>
+
+                        <!-- DESTINATION SELECTION -->
+                        <!-- Dropdown menu for choosing a destination -->
+                        <div class="formgroup">
+                            <label for="destination">Destination *</label>
+
+                            <!-- SELECT MENU -->
+                            <!-- Allows users to select one option from a list -->
+                            <select id="destination" name="destination" required>
+
+                                <!-- DEFAULT OPTION -->
+                                <!-- Placeholder option shown before selection -->
+                                <option value="">&mdash; Choose a destination &mdash;</option>
+
+                                <!-- DATA ATTRIBUTES -->
+                                <!-- Stores package data for JavaScript updates -->
+                                <option value="paris"     data-price="599" data-img="../Assets/Packages Page/Package-Paris.jpg">Paris, France AED 599pp</option>
+                                <option value="rome"      data-price="549" data-img="../Assets/Packages Page/Package-Rome.jpg">Rome, Italy AED 549pp</option>
+                                <option value="santorini" data-price="749" data-img="../Assets/Packages Page/Package-Santorini.jpg">Santorini, Greece AED 749pp</option>
+                                <option value="vienna"    data-price="529" data-img="../Assets/Packages Page/Package-Vienna.jpg">Vienna, Austria AED 529pp</option>
+                                <option value="prague"    data-price="449" data-img="../Assets/Packages Page/Package-Prague.jpg">Prague, Czech Republic AED 449pp</option>
+                                <option value="amsterdam" data-price="499" data-img="../Assets/Packages Page/Package-Amsterdam.jpg">Amsterdam, Netherlands AED 499pp</option>
+                            </select>
+                            <span class="errormsg" role="alert"></span>
+                        </div>
+
+                        <!-- DATE INPUTS -->
+                        <!-- Allows users to select travel dates -->
+                        <div class="formrow">
+                            <div class="formgroup">
+                                <label for="travel-date">Departure Date *</label>
+
+                                <!-- DATE PICKER -->
+                                <!-- Calendar input for selecting dates -->
+                                <input type="date" id="travel-date" name="travel-date" required>
+                                <span class="errormsg" role="alert"></span>
+                            </div>
+                            <div class="formgroup">
+                                <label for="return-date">Return Date</label>
+                                <input type="date" id="return-date" name="return-date">
+                            </div>
+                        </div>
+
+                        <!-- PACKAGE OPTIONS -->
+                        <!-- Allows users to select guests and trip duration -->
+                        <div class="formrow">
+                            <div class="formgroup">
+                                <label for="guests">Guests</label>
+                                <select id="guests" name="guests">
+                                    <option value="1">1 guest</option>
+
+                                    <!-- DEFAULT SELECTED OPTION -->
+                                    <!-- Pre-selects the most common option -->
+                                    <option value="2" selected>2 guests</option>
+
+                                    <option value="3">3 guests</option>
+                                    <option value="4">4 guests</option>
+                                    <option value="5">5 guests</option>
+                                </select>
+                            </div>
+                            <div class="formgroup">
+                                <label for="nights">Duration</label>
+                                <select id="nights" name="nights">
+                                    <option value="3">3 nights</option>
+                                    <option value="4" selected>4 nights</option>
+                                    <option value="5">5 nights</option>
+                                    <option value="7">7 nights</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- TEXTAREA INPUT -->
+                        <!-- Allows users to enter longer text requests -->
+                        <div class="formgroup">
+                            <label for="requests">Special Requests (optional)</label>
+                            <textarea id="requests" name="requests" rows="3"
+                                placeholder="Dietary requirements, accessibility needs, special occasions..."></textarea>
+                        </div>
+
+                        <!-- SUBMIT BUTTON -->
+                        <!-- Sends the booking form data -->
+                        <button type="submit" class="btn btnprimary" style="width:100%;justify-content:center;margin-top:0.5rem;">
+                            Confirm Booking ->
+                        </button>
+
+                        <!-- FORM NOTE -->
+                        <!-- Displays additional booking information -->
+                        <p class="form-note">Secure booking &mdash; Free cancellation within 24 hours</p>
+
+                    </form>
+                </div>
+
+                <!-- CONFIRMATION MESSAGE -->
+                <!-- Displayed after successful booking submission -->
+                <div class="confirmbox" id="confirm-box" role="alert" aria-live="polite">
+                    <!-- SUCCESS ICON -->
+                    <!-- Displays a confirmation symbol -->
+                    <div class="confirm-icon">&check;</div>
+
+                    <h2>Booking Confirmed!</h2>
+
+                    <!-- DYNAMIC CONTENT -->
+                    <!-- JavaScript inserts the selected destination -->
+                    <p>Your <strong><span id="confirm-dest">your destination</span></strong> package has been reserved.</p>
+                    <p class="confirm-sub">
+                        A confirmation email will be sent shortly. Our team will be in touch
+                        within 24 hours with your full itinerary.
+                    </p>
+
+                    <!-- NAVIGATION BUTTONS -->
+                    <!-- Allows users to continue browsing -->
+                    <a href="../index.html" class="btn btnprimary">Back to Home</a>
+                    <a href="packages.html" class="btn btnoutline" style="margin-left:0.75rem;">Browse More</a>
+                </div>
+
+                <!-- ORDER SUMMARY -->
+                <!-- Displays a live booking summary -->
+                <aside>
+
+                    <!-- SUMMARY CARD -->
+                    <!-- Displays selected booking details -->
+                    <div class="ordercard">
+
+                        <!-- DYNAMIC IMAGE -->
+                        <!-- Updates based on the selected destination -->
+                        <img class="ordercard-img" id="order-img"
+                            src="../Assets/Packages Page/Package-Paris.jpg"
+                            alt="Selected destination"
+                            loading="lazy">
+                        <div class="ordercard-body">
+
+                            <!-- DYNAMIC TITLE -->
+                            <!-- Updates based on selected package -->
+                            <h2 class="ordercard-dest" id="order-dest">Select a destination</h2>
+
+                            <!-- ORDER DETAILS -->
+                            <!-- Displays booking information -->
+                            <div class="orderline">
+                                <span>Guests</span>
+                                <span id="line-guests">2 guests</span>
+                            </div>
+                            <div class="orderline">
+                                <span>Duration</span>
+                                <span id="line-nights">4 nights</span>
+                            </div>
+                            <div class="orderline">
+                                <span>Rate</span>
+                                <span id="line-base">&mdash;</span>
+                            </div>
+
+                            <!-- INCLUDED SERVICES -->
+                            <!-- Displays included package benefits -->
+                            <div class="orderline">
+                                <span>Flights</span>
+                                <span class="included">Included &check;</span>
+                            </div>
+                            <div class="orderline">
+                                <span>Breakfast</span>
+                                <span class="included">Included &check;</span>
+                            </div>
+
+                            <!-- TOTAL PRICE -->
+                            <!-- Displays estimated total booking cost -->
+                            <div class="orderline ordertotal">
+                                <span>Total Estimate</span>
+                                <span class="orderval" id="order-total">&mdash;</span>
+                            </div>
+
+                            <!-- ORDER NOTE -->
+                            <!-- Displays additional pricing information -->
+                            <p class="order-note">
+                                Final price confirmed in your booking email.
+                                Free cancellation within 24 hours.
+                            </p>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="../index.html" class="footer-logo">Holidae</a>
+                <p>Flights, hotels, and unforgettable European escapes &mdash; all in one place.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">How It Works</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Centre</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Holidae Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../Scripts/booking.js"></script>
+
+</body>
+</html>

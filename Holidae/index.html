@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holidae | Home</title>
+    <link rel="stylesheet" href="Stylesheets/index.css"> <!-- Links the external CSS file for page styling -->
+</head>
+<body>
+
+    <!-- MAIN PAGE WRAPPER -->
+    <!-- Wraps all website content into one main container -->
+    <div>
+
+        <!-- HEADER SECTION -->
+        <!-- Contains the website navigation and branding -->
+        <header>
+
+            <!-- DEFAULT NAVIGATION -->
+            <!-- Navigation bar for desktop view -->
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <a href="index.html" class="navlogo" aria-label="Holidae home">
+                    <img src="Assets/holidaelogo.png" class="navlogo-img" alt="Holidae logo">
+                    Holidae
+                </a>
+
+                <!-- NAVIGATION LINKS -->
+                <!-- Unordered list used to organize navigation links -->
+                <ul class="navlinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Pages/packages.html">All Packages</a></li>
+                    
+                    <!-- CALL TO ACTION BUTTON -->
+                    <!-- Highlights the main booking action -->
+                    <li><a href="Pages/booking.html" class="navcta">Book Now</a></li>
+                </ul>
+
+                <!-- MOBILE MENU BUTTON -->
+                <!-- Hamburger button used to toggle mobile navigation -->
+                <button class="navmobile" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+
+            <!-- MOBILE NAVIGATION -->
+            <!-- Dropdown navigation menu displayed on smaller screens -->
+            <div class="navmobiledrawer" aria-hidden="true">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Pages/packages.html">All Packages</a></li>
+                    <li><a href="Pages/booking.html">Book Now</a></li>
+                </ul>
+            </div>
+
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <!-- Contains the primary content of the webpage -->
+        <main>
+
+            <!-- HOME PAGE -->
+            <!-- Hero section introducing the website -->
+            <section class="home" aria-labelledby="home-title">
+
+                <!-- OVERLAY -->
+                <!-- Adds a visual overlay effect on the background image -->
+                <div class="homeoverlay"></div>
+
+                <!-- HERO CONTENT -->
+                <!-- Contains the main heading, description, and buttons -->
+                <div class="homecontent">
+
+                    <!-- SECTION LABEL -->
+                    <!-- Displays a short introductory text -->
+                    <p class="homeupper">Europe's finest</p>
+
+                    <!-- MAIN HEADING -->
+                    <!-- Main title of the homepage -->
+                    <h1 class="hometitle" id="home-title">
+                        Your next<br><em>adventure</em><br>awaits!
+                    </h1>
+
+                    <!-- DESCRIPTION -->
+                    <!-- Provides information about the website services -->
+                    <p class="homesubtitle">
+                        Handpicked packages to Europe's most captivating destinations.
+                        Affordable prices, unforgettable memories.
+                    </p>
+
+                    <!-- ACTION BUTTONS -->
+                    <!-- Buttons used for page navigation -->
+                    <div class="homeactions">
+                        <a href="Pages/packages.html" class="btn btnprimary">Explore Packages</a>
+                        <a href="#picks" class="btn btnghost">Top Destinations</a>
+                    </div>
+                </div>
+
+                <!-- SCROLL INDICATOR -->
+                <!-- Encourages users to scroll to the next section -->
+                <a href="#picks" class="homescroll" aria-label="Scroll down">
+                    <span class="homescroll-text">Scroll</span>
+                    <span class="homescroll-line"></span>
+                </a>
+
+            </section>
+
+            <!-- DESTINATIONS SECTION -->
+            <!-- Displays featured travel destinations -->
+            <section class="pickssection" id="picks">
+
+                <!-- TOP PICKS -->
+                <!-- Shows selected featured destinations -->
+                <div class="picksright">
+
+                    <!-- SECTION HEADER -->
+                    <!-- Contains the section title and description -->
+                    <div class="picksright-header reveal">
+                        <span class="sectionupper">People's Choice</span>
+                        <h2 class="sectiontitle">Top Destination Picks</h2>
+                        <p class="sectiondesc">Our most-loved destinations &mdash; Chosen for their beauty and charm.</p>
+                    </div>
+
+                    <!-- GRID LAYOUT -->
+                    <!-- Uses a grid structure to organize destination cards -->
+                    <div class="picksgrid reveal-stagger">
+
+                        <!-- DESTINATION CARD -->
+                        <!-- Card component used to display destination information -->
+                        <article class="pickscard">
+
+                            <!-- IMAGE -->
+                            <!-- Displays destination image with lazy loading for performance -->
+                            <img class="pickscard-img"
+                                src="Assets/Home Page/TopDestination-Paris.jpg"
+                                alt="Paris, France"
+                                loading="lazy">
+                            
+                            <!-- IMAGE OVERLAY -->
+                            <!-- Adds a visual overlay effect on the image -->
+                            <div class="pickscard-overlay"></div>
+
+                            <!-- CARD CONTENT -->
+                            <!-- Contains destination details -->
+                            <div class="pickscard-body">
+
+                                <!-- DESTINATION TAG -->
+                                <!-- Displays a featured label -->
+                                <span class="pickscard-tag">Most Popular</span>
+                                <h3 class="pickscard-city">Paris</h3>
+                                <p class="pickscard-country">France</p>
+
+                                <!-- PRICE DISPLAY -->
+                                <!-- Shows package starting price -->
+                                <p class="pickscard-price">From <span>AED 599</span> pp</p>
+                            </div>
+
+                            <!-- CARD BUTTON -->
+                            <!-- Link directing users to the selected package -->
+                            <div class="pickscard-link">
+                                <a href="Pages/packages.html#paris" class="btn btnghost">Explore -></a>
+                            </div>
+                        </article>
+
+                        <!-- ROME -->
+                        <article class="pickscard">
+                            <img class="pickscard-img"
+                                src="Assets/Home Page/TopDestination-Rome.jpg"
+                                alt="Rome, Italy"
+                                loading="lazy">
+                            <div class="pickscard-overlay"></div>
+                            <div class="pickscard-body">
+                                <span class="pickscard-tag">Best Value</span>
+                                <h3 class="pickscard-city">Rome</h3>
+                                <p class="pickscard-country">Italy</p>
+                                <p class="pickscard-price">From <span>AED 549</span> pp</p>
+                            </div>
+                            <div class="pickscard-link">
+                                <a href="Pages/packages.html#rome" class="btn btnghost">Explore -></a>
+                            </div>
+                        </article>
+
+                        <!-- SANTORINI -->
+                        <article class="pickscard">
+                            <img class="pickscard-img"
+                                src="Assets/Home Page/TopDestination-Santorini.jpg"
+                                alt="Santorini, Greece"
+                                loading="lazy">
+                            <div class="pickscard-overlay"></div>
+                            <div class="pickscard-body">
+                                <span class="pickscard-tag">Scenic</span>
+                                <h3 class="pickscard-city">Santorini</h3>
+                                <p class="pickscard-country">Greece</p>
+                                <p class="pickscard-price">From <span>AED 749</span> pp</p>
+                            </div>
+                            <div class="pickscard-link">
+                                <a href="Pages/packages.html#santorini" class="btn btnghost">Explore -></a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- BROWSE ALL PACKAGES -->
+                <!-- Highlights the complete package collection -->
+                <div class="picksleft reveal">
+
+                    <!-- INFORMATION CARD -->
+                    <!-- Promotional card encouraging users to explore packages -->
+                    <div class="picksleft-card">
+                        <span class="sectionupper">All Destinations</span>
+                        <h2 class="picksleft-title">Browse All Our Packages!</h2>
+                        <p class="picksleft-desc">
+                            Six stunning European destinations waiting to be explored &mdash;
+                            find the one that calls to you
+                        </p>
+                        <a href="Pages/packages.html#rome" class="btn btnghost">See All Packages -></a>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- FOOTER SECTION -->
+        <!-- Contains company and support information -->
+        <footer role="contentinfo">
+
+            <!-- FOOTER GRID -->
+            <!-- Uses a grid layout to organize footer columns -->
+            <div class="footer-grid">
+
+                <!-- BRAND INFORMATION -->
+                <!-- Displays company branding and description -->
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">Holidae</a>
+                    <p>Flights, hotels, and unforgettable European escapes &mdash; all in one place</p>
+                </div>
+
+                <!-- FOOTER LINKS -->
+                <!-- Displays grouped footer navigation links -->
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">How It Works</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <!-- Displays website copyright information -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Holidae Ltd. All rights reserved</p>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- EXTERNAL JAVASCRIPT -->
+    <!-- Links the JavaScript file for website interactivity -->
+    <script src="Scripts/index.js"></script>
+
+</body>
+</html>

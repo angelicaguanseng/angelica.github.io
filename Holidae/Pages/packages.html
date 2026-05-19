@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holidae | Packages</title>
+    <link rel="stylesheet" href="../Stylesheets/packages.css">
+</head>
+<body>
+
+    <header>
+
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <a href="../index.html" class="navlogo" aria-label="Holidae home">
+                <img src="../Assets/holidaelogo.png" class="navlogo-img" alt="Holidae logo">
+                Holidae
+            </a>
+
+            <ul class="navlinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Pages/packages.html">All Packages</a></li>
+                <li><a href="../Pages/booking.html" class="navcta">Book Now</a></li>
+            </ul>
+
+            <button class="navmobile" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+
+        <div class="navmobiledrawer" aria-hidden="true">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Pages/packages.html">All Packages</a></li>
+                <li><a href="../Pages/booking.html">Book Now</a></li>
+            </ul>
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- PAGE HERO -->
+        <!-- Introductory banner section for the packages page -->
+        <div class="pagehero" role="banner">
+
+            <!-- HERO BACKGROUND -->
+            <!-- Displays the background image for the hero section -->
+            <div class="pagehero-bg" role="img" aria-label="European cityscape"></div>
+            
+            <!-- HERO OVERLAY -->
+            <!-- Adds a dark overlay effect for better text visibility -->
+            <div class="pagehero-overlay"></div>
+            
+            <!-- HERO CONTENT -->
+            <!-- Contains the hero heading and description -->
+            <div class="pagehero-content">
+                <h1 class="pagehero-title">Our Holiday Packages</h1>
+                <p class="pagehero-sub">6 stunning destinations &mdash; flights and hotels included</p>
+            </div>
+        </div>
+
+        <!-- PACKAGES SECTION -->
+        <!-- Displays all holiday package cards -->
+        <section class="packagessection">
+
+            <!-- GRID LAYOUT -->
+            <!-- Organizes package cards into a grid structure -->
+            <div class="packagesgrid">
+
+                <!-- PACKAGE CARD -->
+                <!-- Reusable card component displaying destination information -->
+                <article class="pkgcard reveal" data-dest="paris">
+
+                    <!-- IMAGE CONTAINER -->
+                    <!-- Wraps the package image and badge -->
+                    <div class="pkgcard-imgwrap">
+
+                        <!-- DESTINATION IMAGE -->
+                        <!-- Displays destination image with lazy loading -->
+                        <img class="pkgcard-img" src="../Assets/Packages Page/Package-Paris.jpg" alt="Paris, France" loading="lazy">
+                        
+                        <!-- FEATURED BADGE -->
+                        <!-- Displays a promotional label -->
+                        <span class="pkgcard-badge">Top Pick</span>
+                    </div>
+
+                    <!-- CARD CONTENT -->
+                    <!-- Contains package information -->
+                    <div class="pkgcard-body">
+
+                        <!-- PACKAGE META DATA -->
+                        <!-- Displays country and rating information -->
+                        <div class="pkgcard-meta">
+                            <span class="pkgcard-country">France</span>
+                            <span class="pkgcard-rating">&#9733; 4.9</span>
+                        </div>
+
+                        <!-- DESTINATION TITLE -->
+                        <!-- Displays the destination name -->
+                        <h2 class="pkgcard-name">Paris</h2>
+
+                        <!-- PACKAGE DESCRIPTION -->
+                        <!-- Provides a short overview of the destination -->
+                        <p class="pkgcard-desc">The City of Light &mdash; art, cuisine, fashion and iconic landmarks at every turn.</p>
+                        
+                        <!-- FLEX SPACER -->
+                        <!-- Keeps card elements aligned equally across all cards -->
+                        <div class="pkgcard-spacer"></div>
+
+                        <!-- PACKAGE DETAILS -->
+                        <!-- Displays package information such as flights and duration -->
+                        <div class="pkgcard-details">
+                            <span>Flights inc.</span>
+                            <span>3&ndash;5 nights</span>
+                            <span>Year-round</span>
+                        </div>
+                        <div class="pkgcard-footer">
+                            <div>
+                                <p class="pkgcard-pricelabel">From</p>
+                                <p class="pkgcard-priceval">AED 599</p>
+                                <p class="pkgcard-pricepp">per person</p>
+                            </div>
+                            <div class="pkgcard-btns">
+                                <button class="btn btnoutline viewdetails-btn" data-dest="paris">View Details</button>
+                                <a href="../Pages/booking.html?dest=paris&price=599" class="btn btnprimary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ROME -->
+                <article class="pkgcard reveal" data-dest="rome">
+                    <div class="pkgcard-imgwrap">
+                        <img class="pkgcard-img" src="../Assets/Packages Page/Package-Rome.jpg" alt="Rome, Italy" loading="lazy">
+                        <span class="pkgcard-badge">Best Value</span>
+                    </div>
+                    <div class="pkgcard-body">
+                        <div class="pkgcard-meta">
+                            <span class="pkgcard-country">Italy</span>
+                            <span class="pkgcard-rating">&#9733; 4.8</span>
+                        </div>
+                        <h2 class="pkgcard-name">Rome</h2>
+                        <p class="pkgcard-desc">The Eternal City &mdash; ancient ruins, Renaissance art, and incredible pasta.</p>
+                        <div class="pkgcard-spacer"></div>
+                        <div class="pkgcard-details">
+                            <span>Flights inc.</span>
+                            <span>3&ndash;5 nights</span>
+                            <span>Year-round</span>
+                        </div>
+
+                        <!-- CARD FOOTER -->
+                        <!-- Contains pricing and action buttons -->
+                        <div class="pkgcard-footer">
+
+                            <!-- PRICE INFORMATION -->
+                            <!-- Displays the package starting price -->
+                            <div>
+                                <p class="pkgcard-pricelabel">From</p>
+                                <p class="pkgcard-priceval">AED 549</p>
+                                <p class="pkgcard-pricepp">per person</p>
+                            </div>
+
+                            <!-- ACTION BUTTONS -->
+                            <!-- Buttons used for viewing details and booking -->
+                            <div class="pkgcard-btns">
+
+                                <!-- MODAL BUTTON -->
+                                <!-- Opens the destination details modal -->
+                                <button class="btn btnoutline viewdetails-btn" data-dest="rome">View Details</button>
+                                
+                                <!-- BOOKING LINK -->
+                                <!-- Redirects users to the booking page -->
+                                <a href="booking.html?dest=rome&price=549" class="btn btnprimary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="pkgcard reveal" data-dest="santorini">
+                    <div class="pkgcard-imgwrap">
+                        <img class="pkgcard-img" src="../Assets/Packages Page/Package-Santorini.jpg" alt="Santorini, Greece" loading="lazy">
+                        <span class="pkgcard-badge">Scenic</span>
+                    </div>
+                    <div class="pkgcard-body">
+                        <div class="pkgcard-meta">
+                            <span class="pkgcard-country">Greece</span>
+                            <span class="pkgcard-rating">&#9733; 4.9</span>
+                        </div>
+                        <h2 class="pkgcard-name">Santorini</h2>
+                        <p class="pkgcard-desc">Clifftop villages, volcanic beaches, and legendary Aegean sunsets.</p>
+                        <div class="pkgcard-spacer"></div>
+                        <div class="pkgcard-details">
+                            <span>Flights inc.</span>
+                            <span>5&ndash;7 nights</span>
+                            <span>Apr &ndash; Oct</span>
+                        </div>
+                        <div class="pkgcard-footer">
+                            <div>
+                                <p class="pkgcard-pricelabel">From</p>
+                                <p class="pkgcard-priceval">AED 749</p>
+                                <p class="pkgcard-pricepp">per person</p>
+                            </div>
+                            <div class="pkgcard-btns">
+                                <button class="btn btnoutline viewdetails-btn" data-dest="santorini">View Details</button>
+                                <a href="booking.html?dest=santorini&price=749" class="btn btnprimary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="pkgcard reveal" data-dest="vienna">
+                    <div class="pkgcard-imgwrap">
+                        <img class="pkgcard-img" src="../Assets/Packages Page/Package-Vienna.jpg" alt="Vienna, Austria" loading="lazy">
+                        <span class="pkgcard-badge">Hidden Gem</span>
+                    </div>
+                    <div class="pkgcard-body">
+                        <div class="pkgcard-meta">
+                            <span class="pkgcard-country">Austria</span>
+                            <span class="pkgcard-rating">&#9733; 4.7</span>
+                        </div>
+                        <h2 class="pkgcard-name">Vienna</h2>
+                        <p class="pkgcard-desc">Imperial palaces, world-class classical music, and coffee house culture.</p>
+                        <div class="pkgcard-spacer"></div>
+                        <div class="pkgcard-details">
+                            <span>Flights inc.</span>
+                            <span>5&ndash;7 nights</span>
+                            <span>Apr &ndash; Oct</span>
+                        </div>
+                        <div class="pkgcard-footer">
+                            <div>
+                                <p class="pkgcard-pricelabel">From</p>
+                                <p class="pkgcard-priceval">AED 749</p>
+                                <p class="pkgcard-pricepp">per person</p>
+                            </div>
+                            <div class="pkgcard-btns">
+                                <button class="btn btnoutline viewdetails-btn" data-dest="vienna">View Details</button>
+                                <a href="booking.html?dest=vienna&price=749" class="btn btnprimary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="pkgcard reveal" data-dest="prague">
+                    <div class="pkgcard-imgwrap">
+                        <img class="pkgcard-img" src="../Assets/Packages Page/Package-Prague.jpg" alt="Prague, Czech Republic" loading="lazy">
+                        <span class="pkgcard-badge">Top Rated</span>
+                    </div>
+                    <div class="pkgcard-body">
+                        <div class="pkgcard-meta">
+                            <span class="pkgcard-country">Czech Republic</span>
+                            <span class="pkgcard-rating">&#9733; 4.8</span>
+                        </div>
+                        <h2 class="pkgcard-name">Prague</h2>
+                        <p class="pkgcard-desc">Gothic spires, Baroque palaces, and one of Europe's most beautiful old towns.</p>
+                        <div class="pkgcard-spacer"></div>
+                        <div class="pkgcard-details">
+                            <span>Flights inc.</span>
+                            <span>3&ndash;4 nights</span>
+                            <span>Year-round</span>
+                        </div>
+                        <div class="pkgcard-footer">
+                            <div>
+                                <p class="pkgcard-pricelabel">From</p>
+                                <p class="pkgcard-priceval">AED 449</p>
+                                <p class="pkgcard-pricepp">per person</p>
+                            </div>
+                            <div class="pkgcard-btns">
+                                <button class="btn btnoutline viewdetails-btn" data-dest="prague">View Details</button>
+                                <a href="booking.html?dest=prague&price=449" class="btn btnprimary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="pkgcard reveal" data-dest="amsterdam">
+                    <div class="pkgcard-imgwrap">
+                        <img class="pkgcard-img" src="../Assets/Packages Page/Package-Amsterdam.jpg" alt="Amsterdam, Netherlands" loading="lazy">
+                        <span class="pkgcard-badge">Must Visit</span>
+                    </div>
+                    <div class="pkgcard-body">
+                        <div class="pkgcard-meta">
+                            <span class="pkgcard-country">Netherlands</span>
+                            <span class="pkgcard-rating">&#9733; 4.6</span>
+                        </div>
+                        <h2 class="pkgcard-name">Amsterdam</h2>
+                        <p class="pkgcard-desc">Canal cruises, world-class museums, and the warmest welcome in Europe.</p>
+                        <div class="pkgcard-spacer"></div>
+                        <div class="pkgcard-details">
+                            <span>Flights inc.</span>
+                            <span>3&ndash;4 nights</span>
+                            <span>Year-round</span>
+                        </div>
+                        <div class="pkgcard-footer">
+                            <div>
+                                <p class="pkgcard-pricelabel">From</p>
+                                <p class="pkgcard-priceval">AED 499</p>
+                                <p class="pkgcard-pricepp">per person</p>
+                            </div>
+                            <div class="pkgcard-btns">
+                                <button class="btn btnoutline viewdetails-btn" data-dest="amsterdam">View Details</button>
+                                <a href="booking.html?dest=amsterdam&price=499" class="btn btnprimary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- DESTINATION MODAL -->
+        <!-- Popup modal displaying detailed destination information -->
+        <div class="modal" id="dest-modal" role="dialog" aria-modal="true" aria-label="Destination details">
+            
+            <!-- MODAL BACKDROP -->
+            <!-- Dark background overlay behind the modal -->
+            <div class="modal-backdrop"></div>
+
+            <!-- MODAL PANEL -->
+            <!-- Main modal container -->
+            <div class="modal-panel">
+
+                <!-- CLOSE BUTTON -->
+                <!-- Closes the modal window -->
+                <button class="modal-close" aria-label="Close">&#10005;</button>
+                
+                <!-- MODAL HERO -->
+                <!-- Displays the destination image and title -->
+                <div class="modal-hero">
+                    <img class="modal-hero-img" src="" alt="">
+
+                    <!-- MODAL OVERLAY -->
+                    <!-- Adds a dark overlay over the modal image -->
+                    <div class="modal-hero-overlay"></div>
+
+                    <!-- MODAL CONTENT -->
+                    <!-- Contains destination information -->
+                    <div class="modal-hero-content">
+                        <h2 class="modal-title"></h2>
+                        <p class="modal-country"></p>
+                        <p class="modal-price"></p>
+                    </div>
+                </div>
+
+                <!-- MODAL BODY -->
+                <!-- Contains detailed destination information -->
+                <div class="modal-body">
+
+                    <!-- CONTENT SECTION -->
+                    <!-- Organizes modal information into sections -->
+                    <div class="modal-section">
+                        <h3>About This Destination</h3>
+                        <p class="modal-desc"></p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>What's Included</h3>
+
+                        <!-- DYNAMIC LIST -->
+                        <!-- JavaScript inserts package inclusions here -->
+                        <ul class="modal-list modal-included"></ul>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Top Experiences</h3>
+
+                        <!-- DYNAMIC LIST -->
+                        <!-- JavaScript inserts experience items here -->
+                        <ul class="modal-list modal-experiences"></ul>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Gallery</h3>
+
+                        <!-- IMAGE GALLERY -->
+                        <!-- Displays destination gallery images -->
+                        <div class="modal-gallery"></div>
+                    </div>
+
+                    <!-- MODAL BOOKING BUTTON -->
+                    <!-- Redirects users to the booking page -->
+                    <a href="#" class="btn btnprimary modal-bookbtn">Book This Package &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- LIGHTBOX -->
+        <!-- Enlarged image viewer for gallery images -->
+        <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+            
+            <!-- LIGHTBOX CLOSE BUTTON -->
+            <!-- Closes the lightbox viewer -->
+            <button class="lightbox-close" aria-label="Close">&#10005;</button>
+            
+            <!-- LIGHTBOX IMAGE -->
+            <!-- Displays the selected gallery image -->
+            <img src="" alt="">
+        </div>
+
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="../index.html" class="footer-logo">Holidae</a>
+                <p>Flights, hotels, and unforgettable European escapes &mdash; all in one place.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">How It Works</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Centre</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Holidae Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../Scripts/packages.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,612 @@
+/* CSS FOR BOOKING PAGE */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* RESET & BASE */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: #FDFAF7;
+    color: #1E1A16;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Styles textarea inputs with custom borders and spacing */
+textarea {
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #E8DDD0;
+    border-radius: 6px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.9rem;
+    color: #1E1A16;
+    background: #FDFAF7;
+    outline: none;
+    resize: vertical;
+    width: 100%;
+    transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Changes textarea border colour when focused */
+textarea:focus {
+    border-color: #C4714A;
+}
+
+/* NAVIGATION */
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 68px;
+    background: #fff;
+    border-bottom: 1px solid #E8DDD0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 clamp(1rem, 5vw, 3rem);
+}
+
+.navlogo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #1E1A16;
+}
+
+.navlogo-img {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.navlinks {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navlinks a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #3D3730;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navlinks a:hover {
+    color: #C4714A;
+}
+
+.navcta {
+    background: #C4714A !important;
+    color: #fff !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+}
+
+.navcta:hover {
+    background: #A35A37 !important;
+}
+
+.navmobile {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+}
+
+.navmobile span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #1E1A16;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navmobile.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.navmobile.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.navmobile.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.navmobiledrawer {
+    display: none;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-bottom: 1px solid #E8DDD0;
+    padding: 1.5rem clamp(1rem, 5vw, 3rem);
+    z-index: 999;
+    box-shadow: 0 8px 32px rgba(30, 26, 22, 0.12);
+}
+
+.navmobiledrawer.open {
+    display: block;
+}
+
+.navmobiledrawer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.navmobiledrawer a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #3D3730;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navmobiledrawer a:hover {
+    color: #C4714A;
+}
+
+/* BUTTONS */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    border-radius: 50px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+}
+
+.btnprimary {
+    background: #C4714A;
+    color: #fff;
+}
+
+.btnprimary:hover {
+    background: #A35A37;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(30, 26, 22, 0.12);
+}
+
+.btnoutline {
+    background: transparent;
+    color: #C4714A;
+    border: 1.5px solid #C4714A;
+}
+
+.btnoutline:hover {
+    background: #C4714A;
+    color: #fff;
+}
+
+/* BOOKING PAGE */
+
+.bookingpage {
+    min-height: 100svh;
+    padding-top: 68px;
+    background: #F9F4EE;
+}
+
+.bookingpage-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 3rem clamp(1rem, 5vw, 3rem);
+}
+
+.bookingpage-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.bookingpage-sub {
+    color: #8A7F74;
+    margin-bottom: 2.5rem;
+}
+
+/* STEPS INDICATOR */
+
+.steps {
+    display: flex;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.steps::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background: #E8DDD0;
+    z-index: 0;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.step-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #E8DDD0;
+    border: 2px solid #E8DDD0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 0 auto 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step.active .step-dot,
+.step.done .step-dot {
+    background: #C4714A;
+    border-color: #C4714A;
+    color: #fff;
+}
+
+.step-label {
+    font-size: 0.75rem;
+    color: #8A7F74;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.step.active .step-label {
+    color: #C4714A;
+    font-weight: 500;
+}
+
+/* BOOKING FORM LAYOUT */
+
+.bookingform {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    align-items: start;
+}
+
+.formcard {
+    background: #fff;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(30, 26, 22, 0.08);
+}
+
+.formcard h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #E8DDD0;
+}
+
+.formrow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.formgroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.formgroup label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #8A7F74;
+}
+
+.formgroup input,
+.formgroup select {
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #E8DDD0;
+    border-radius: 6px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.9rem;
+    color: #1E1A16;
+    background: #FDFAF7;
+    outline: none;
+    transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+}
+
+.formgroup input:focus,
+.formgroup select:focus {
+    border-color: #C4714A;
+}
+
+.formgroup input.error {
+    border-color: #C0392B;
+}
+
+.errormsg {
+    font-size: 0.75rem;
+    color: #C0392B;
+    display: none;
+}
+
+.form-note {
+    font-size: 0.78rem;
+    color: #8A7F74;
+    text-align: center;
+    margin-top: 0.75rem;
+}
+
+/* ORDER SUMMARY CARD */
+
+.ordercard {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(30, 26, 22, 0.08);
+    position: sticky;
+    top: calc(68px + 1.5rem);
+}
+
+.ordercard-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: opacity 0.4s ease;
+}
+
+.ordercard-body {
+    padding: 1.5rem;
+}
+
+.ordercard-dest {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.orderline {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #E8DDD0;
+    color: #3D3730;
+}
+
+.orderline:last-of-type {
+    border-bottom: none;
+}
+
+.ordertotal {
+    font-weight: 500;
+    padding-top: 0.75rem;
+    border-top: 1.5px solid #E8DDD0;
+    border-bottom: none;
+}
+
+.orderval {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #C4714A;
+}
+
+.included {
+    color: #6B7B4A;
+}
+
+.order-note {
+    font-size: 0.75rem;
+    color: #8A7F74;
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+/* CONFIRMATION BOX */
+
+.confirmbox {
+    display: none;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(30, 26, 22, 0.08);
+}
+
+.confirm-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #EBF9F1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: #6B7B4A;
+}
+
+.confirmbox h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+}
+
+.confirmbox p {
+    color: #8A7F74;
+    margin-bottom: 1rem;
+}
+
+.confirm-sub {
+    font-size: 0.875rem;
+    margin-bottom: 2rem !important;
+}
+
+/* FOOTER */
+
+footer {
+    background: #1E1A16;
+    color: rgba(255, 255, 255, 0.65);
+    padding: 2.5rem clamp(1rem, 5vw, 3rem) 1.5rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 1.5rem;
+}
+
+.footer-logo {
+    display: block;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.04em;
+}
+
+.footer-brand p {
+    font-size: 0.825rem;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer-col h4 {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0.875rem;
+    font-weight: 500;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col li {
+    margin-bottom: 0.45rem;
+    font-size: 0.825rem;
+}
+
+.footer-col a {
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-col a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+    .bookingform {
+        grid-template-columns: 1fr;
+    }
+
+    .ordercard {
+        position: static;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navlinks {
+        display: none;
+    }
+
+    .navmobile {
+        display: flex;
+    }
+
+    .formrow {
+        grid-template-columns: 1fr;
+    }
+
+    .step-label {
+        display: none;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+}

@@ -1,0 +1,743 @@
+/* CSS FOR HOME PAGE */
+
+
+/* GOOGLE FONTS IMPORT */
+/* Imports custom fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+
+/* CSS RESET */
+/* Removes default spacing and applies consistent box sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ROOT SETTINGS */
+/* Enables smooth scrolling and sets the base font size */
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+/* BODY STYLING */
+/* Defines the main website font, colors, and layout behavior */
+body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: #FDFAF7;
+    color: #1E1A16;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* IMAGE STYLING */
+/* Makes images responsive and removes inline spacing */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* LINK STYLING */
+/* Removes default link color and underline styling */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* NAVIGATION BAR */
+/* Creates a fixed navigation bar at the top of the page */
+.nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    height: 68px;
+    background: #fff;
+    border-bottom: 1px solid #E8DDD0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 clamp(1rem, 5vw, 3rem);
+}
+
+/* FLEXBOX LAYOUT */
+/* Uses Flexbox to align items horizontally */
+.navlogo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #1E1A16;
+}
+
+/* OBJECT FIT */
+/* Prevents the image from stretching */
+.navlogo-img {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+/* NAVIGATION LINKS */
+/* Organizes navigation links in a horizontal layout */
+.navlinks {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+/* TRANSITIONS */
+/* Adds smooth hover transition effects */
+.navlinks a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #3D3730;
+    transition: color 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* HOVER EFFECT */
+/* Changes text color when hovered */
+.navlinks a:hover {
+    color: #C4714A;
+}
+
+/* CALL TO ACTION BUTTON */
+/* Highlights the main booking button */
+.navcta {
+    background: #C4714A !important;
+    color: #fff !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+}
+
+
+.navcta:hover {
+    background: #A35A37 !important;
+}
+
+/* MOBILE MENU BUTTON */
+/* Creates the hamburger menu icon */
+.navmobile {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+}
+
+.navmobile span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #1E1A16;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* TRANSFORM */
+/* Rotates and moves elements for menu animation */
+.navmobile.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+/* OPACITY */
+/* Hides the middle hamburger line during animation */
+.navmobile.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.navmobile.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* MOBILE NAVIGATION DRAWER */
+/* Displays the dropdown menu for mobile devices */
+.navmobiledrawer {
+    display: none;
+    position: fixed;
+    top: 68px; left: 0; right: 0;
+    background: #fff;
+    border-bottom: 1px solid #E8DDD0;
+    padding: 1.5rem clamp(1rem, 5vw, 3rem);
+    z-index: 999;
+    box-shadow: 0 8px 32px rgba(30,26,22,0.12);
+}
+
+/* ACTIVE CLASS */
+/* Shows the mobile navigation when activated */
+.navmobiledrawer.open {
+    display: block;
+}
+
+/* COLUMN FLEX LAYOUT */
+/* Stacks navigation links vertically */
+.navmobiledrawer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.navmobiledrawer a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #3D3730;
+    transition: color 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.navmobiledrawer a:hover {
+    color: #C4714A;
+}
+
+/* HERO SECTION */
+/* Creates the fullscreen homepage section */
+.home {
+    position: relative;
+    height: 100svh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 68px;
+    background-image: url('../Assets/Home Page/Title-Background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* LINEAR GRADIENT */
+/* Adds a dark overlay gradient on the hero background */
+.homeoverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(20,16,12,0.35) 0%,
+        rgba(20,16,12,0.55) 50%,
+        rgba(20,16,12,0.70) 100%
+    );
+}
+
+/* Z-INDEX */
+/* Places content above the overlay */
+.homecontent {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    padding: 0 1.5rem;
+    max-width: 780px;
+}
+
+.homeupper {
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 1rem;
+}
+
+/* CLAMP FUNCTION */
+/* Creates responsive font sizing */
+.hometitle {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    margin-bottom: 1.25rem;
+}
+
+/* ITALIC STYLING */
+/* Highlights selected text using italic styling */
+.hometitle em {
+    font-style: italic;
+    color: #C9A84C;
+}
+
+.homesubtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 300;
+    color: rgba(255,255,255,0.85);
+    max-width: 540px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+}
+
+.homeactions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.homescroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1;
+    color: rgba(255,255,255,0.7);
+    animation: scrollBounce 2.2s ease-in-out infinite;
+}
+
+.homescroll-text {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.homescroll-line {
+    display: block;
+    width: 1px;
+    height: 44px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.7), transparent);
+}
+
+/* KEYFRAME ANIMATION */
+/* Creates a bouncing scroll animation */
+@keyframes scrollBounce {
+    0%, 100% { 
+        transform: translateX(-50%) translateY(0); 
+    }
+
+    50%       { 
+        transform: translateX(-50%) translateY(8px); 
+    }
+}
+
+/* BUTTON STYLING */
+/* Creates reusable button components */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    border-radius: 50px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    text-decoration: none;
+}
+
+/* PRIMARY BUTTON */
+/* Styles the main action button */
+.btnprimary {
+    background: #C4714A;
+    color: #fff;
+}
+
+/* BOX SHADOW */
+/* Adds shadow depth during hover */
+.btnprimary:hover {
+    background: #A35A37;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(30,26,22,0.12);
+}
+
+/* GHOST BUTTON */
+/* Creates a transparent outlined button */
+.btnghost {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.6);
+}
+
+.btnghost:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: #fff;
+}
+
+.btnoutline {
+    background: transparent;
+    color: #C4714A;
+    border: 1.5px solid #C4714A;
+}
+
+.btnoutline:hover {
+    background: #C4714A;
+    color: #fff;
+}
+
+.btndark {
+    background: #1E1A16;
+    color: #fff;
+}
+
+.btndark:hover {
+    background: #3D3730;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(30,26,22,0.12);
+}
+
+.sectionupper {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #C4714A;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+/* SECTION HEADINGS */
+/* Styles reusable section titles and labels */
+.sectiontitle {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #1E1A16;
+    margin-bottom: 1rem;
+}
+
+.sectiondesc {
+    color: #8A7F74;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* CSS GRID */
+/* Creates a responsive grid layout */
+.pickssection {
+    display: grid;
+    grid-template-columns: 1fr 460px;
+    gap: 0;
+    align-items: center;
+    padding: clamp(4rem, 8vw, 7rem) clamp(2rem, 6vw, 6rem);
+    background: #FDFAF7;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.picksright {
+    padding-right: 3.5rem;
+    border-right: 1px solid #E8DDD0;
+}
+
+.picksright-header {
+    margin-bottom: 2rem;
+}
+
+.picksleft {
+    padding-left: 3.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.picksleft-card {
+    background: #1E1A16;
+    border-radius: 20px;
+    color: #fff;
+    padding: 3rem 2.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.picksleft-card .sectionupper {
+    color: #C9A84C;
+}
+
+.picksleft-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.6rem, 2.5vw, 2.25rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.picksleft-desc {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+}
+
+.picksgrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.pickscard:nth-child(2) {
+    margin-top: -2rem;
+}
+
+/* CARD COMPONENT */
+/* Styles the destination cards */
+.pickscard {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+}
+
+.pickscard-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+/* HOVER SCALE EFFECT */
+/* Enlarges the image slightly when hovered */
+.pickscard:hover .pickscard-img {
+    transform: scale(1.06);
+}
+
+.pickscard-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(20,16,12,0.8) 0%, transparent 55%);
+}
+
+/* ABSOLUTE POSITIONING */
+/* Positions content relative to the card */
+.pickscard-body {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1.5rem;
+    color: #fff;
+}
+
+.pickscard-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: #C4714A;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    margin-bottom: 0.6rem;
+}
+
+.pickscard-city {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.pickscard-country {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+    margin-top: 0.25rem;
+}
+
+.pickscard-price {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.pickscard-price span {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.pickscard-link {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.pickscard:hover .pickscard-link {
+    opacity: 1;
+}
+
+/* FOOTER GRID */
+/* Organizes footer content into columns */
+footer {
+    background: #1E1A16;
+    color: rgba(255,255,255,0.65);
+    padding: 2.5rem clamp(1rem, 5vw, 3rem) 1.5rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 1.5rem;
+}
+
+.footer-logo {
+    display: block;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.04em;
+}
+
+.footer-brand p {
+    font-size: 0.825rem;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer-col h4 {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0.875rem;
+    font-weight: 500;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col li {
+    margin-bottom: 0.45rem;
+    font-size: 0.825rem;
+}
+
+.footer-col a {
+    transition: color 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.footer-col a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+/* REVEAL ANIMATION */
+/* Creates fade-in animation effects */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* VISIBLE STATE */
+/* Makes hidden elements visible during animation */
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* STAGGERED ANIMATION */
+/* Delays animations for child elements */
+.reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-stagger.visible > *:nth-child(1) { 
+    opacity: 1; 
+    transform: none; 
+    transition-delay: 0s; 
+}
+
+.reveal-stagger.visible > *:nth-child(2) { 
+    opacity: 1; 
+    transform: none; 
+    transition-delay: 0.12s; 
+}
+
+.reveal-stagger.visible > *:nth-child(3) { 
+    opacity: 1; 
+    transform: none; 
+    transition-delay: 0.24s; 
+}
+
+/* MEDIA QUERY */
+/* Applies responsive styles for tablets */
+@media (max-width: 1024px) {
+    .pickssection {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 5vw, 3rem);
+    }
+
+    .picksright {
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid #E8DDD0;
+        padding-bottom: 2.5rem;
+    }
+
+    .picksleft {
+        padding-left: 0;
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* MOBILE RESPONSIVE DESIGN */
+/* Applies styles for smaller mobile screens */
+@media (max-width: 768px) {
+
+    .navlinks { display: none; }
+    .navmobile { display: flex; }
+
+    .home { background-attachment: scroll; }
+
+    .homeactions { flex-direction: column; align-items: center; }
+
+    .picksgrid { grid-template-columns: 1fr; gap: 1.25rem; }
+    .pickscard:nth-child(2) { margin-top: 0; }
+    .pickscard { aspect-ratio: 16/10; }
+
+    .footer-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+}
+
+/* SMALL SCREEN OPTIMIZATION */
+/* Reduces text sizes for smaller devices */
+@media (max-width: 480px) {
+    .hometitle { 
+        font-size: 2.75rem; 
+    }
+
+    .sectiontitle { 
+        font-size: 1.75rem; 
+    }
+
+    .pickscard-city { 
+        font-size: 1.4rem; 
+    }
+}
